@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des données projets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Système de suivi de projets</p>
+        <h1>Gestion de données relationnelles</h1>
+        <p class="lead">CRUD complet sur Projets, Employés, Départements et Affectations avec intégrité référentielle côté serveur.</p>
+      </div>
+      <div class="status-card">
+        <span>API</span>
+        <strong id="apiStatus">Chargement...</strong>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Tables">
+      <button class="tab active" data-resource="projets">Projets</button>
+      <button class="tab" data-resource="employes">Employés</button>
+      <button class="tab" data-resource="departements">Départements</button>
+      <button class="tab" data-resource="affectations">Affectations</button>
+    </nav>
+
+    <main class="content">
+      <section id="resourcePanel" class="panel"></section>
+    </main>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <button id="closeModalButton" class="icon-button" type="button">Fermer</button>
+      </div>
+      <p id="modalError" class="form-error hidden"></p>
+      <form id="resourceForm" class="form-grid"></form>
+    </div>
+  </div>
+
+  <template id="resourceTemplate">
+    <article class="resource-card">
+      <div class="resource-header">
+        <div>
+          <h2></h2>
+          <p></p>
+        </div>
+        <button class="primary-button add-button" type="button">Ajouter</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
